@@ -31,7 +31,7 @@ module Reek
 
     def add_to_config(smell, options)
       options ||= ': { enabled: false }'
-      YAML.load(smell.gsub(/(^|_)(.)/) { $2.upcase } + options)
+      YAML.load(smell + options)
     end
 
     private_attr_reader :text
