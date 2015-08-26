@@ -72,8 +72,6 @@ module Reek
         end
       end
 
-      attr_reader :smells_found # SMELL: only published for tests
-
       def initialize(config = {})
         config = self.class.default_config.merge(config)
         @config = SmellConfiguration.new(config)
@@ -104,7 +102,7 @@ module Reek
       protected
 
       # NOTE: Needs to be protected so += works for Ruby < 2.2
-      attr_writer :smells_found
+      attr_accessor :smells_found
 
       private
 
