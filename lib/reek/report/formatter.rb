@@ -36,16 +36,8 @@ module Reek
       end
 
       def format(warning)
-        "#{location_formatter.format(warning)}#{base_format(warning)}"
+        "#{location_formatter.format(warning)}#{warning.base_message}"
       end
-
-      private
-
-      def base_format(warning)
-        "#{warning.context} #{warning.message} (#{warning.smell_type})"
-      end
-
-      private
 
       private_attr_reader :location_formatter
     end

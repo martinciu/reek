@@ -31,12 +31,10 @@ module Reek
         (self <=> other) == 0
       end
 
-      # @api private
       def matches?(klass, other_parameters = {})
         smell_classes.include?(klass.to_s) && common_parameters_equal?(other_parameters)
       end
 
-      # @api private
       def report_on(listener)
         listener.found_smell(self)
       end
@@ -46,6 +44,10 @@ module Reek
         core_yaml_hash.
           merge(stringified_params).
           merge(wiki_link_hash(warning_formatter))
+      end
+
+      def base_message
+        "#{context} #{message} (#{smell_type})"
       end
 
       protected

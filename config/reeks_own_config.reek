@@ -1,0 +1,12 @@
+---
+UtilityFunction:
+  exclude:
+    - "Reek::Spec#reek"
+    - "Reek::Spec#reek_of"
+    - "Reek::Spec#reek_only_of"
+DuplicateMethodCall:
+  exclude:
+    - "Reek::Source::SourceCode#self.from"
+IrresponsibleModule:
+  exclude:
+    - "Reek::Configuration::ConfigFileException"
