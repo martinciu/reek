@@ -1,7 +1,6 @@
 require 'private_attr/everywhere'
 
 module Reek
-  # @api private
   module AST
     ObjectRef = Struct.new(:name, :line)
     #

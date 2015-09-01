@@ -12,7 +12,6 @@ module Reek
     #   - {file:README.md}
     # for details.
     #
-    # @api private
     class SmellDetector
       attr_reader :source
 
