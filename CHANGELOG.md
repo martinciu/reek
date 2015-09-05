@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* (martinciu) Handle config.reek file and `--smell` option at the same time
+
 ## 3.3.1 (2015-09-03)
 
 * (troessner) Fix file list as argument in rake task

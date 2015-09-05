@@ -26,9 +26,10 @@ module Reek
       end
 
       def configure(klass, config)
-        detector = detectors[klass]
-        raise ArgumentError, "Unknown smell type #{klass} found in configuration" unless detector
-        detector.configure_with(config)
+        raise ArgumentError, "Unknown smell type #{klass} found in configuration" unless Object.const_defined?(klass.to_s)
+        if detector = detectors[klass]
+          detector.configure_with(config)
+        end
       end
 
       def report_on(listener)
